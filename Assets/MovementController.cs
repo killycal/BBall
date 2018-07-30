@@ -37,5 +37,15 @@ public class MovementController : MonoBehaviour {
             
             GameObject.Find("Ball").GetComponent<Ball>().Pass(possession);
         }
+        if (Input.GetKeyUp("1")&&possession!="1")
+            GameObject.Find("Ball").GetComponent<Ball>().Pass("1");
+        if (Input.GetKeyUp("2") && possession != "2")
+            GameObject.Find("Ball").GetComponent<Ball>().Pass("2");
+        if (Input.GetKeyUp("3") && possession != "3")
+            GameObject.Find("Ball").GetComponent<Ball>().Pass("3");
+        if (Input.GetKeyUp("4") && possession != "4")
+            GameObject.Find("Ball").GetComponent<Ball>().Pass("4");
+        if (Input.GetKeyUp("5") && possession != "5")
+            GameObject.Find("Ball").GetComponent<Ball>().Pass("5");
     }
 }

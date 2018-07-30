@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{6754093B-20CD-C03B-0D64-4C07D0F72E3A}</ProjectGuid>
+    <ProjectGuid>{888E1A7A-1D9F-8B91-7FD6-12160B24E520}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,14 +61,16 @@
   <ItemGroup>
     <Compile Include="Assets\Ball.cs" />
     <Compile Include="Assets\MovementController.cs" />
+    <Compile Include="Assets\Objective.cs" />
     <Compile Include="Assets\Parabolic.cs" />
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\TeamController.cs" />
     <Compile Include="Assets\TopDownCameraController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Caleb/Documents/GitHub/Basketball/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Caleb/Documents/GitHub/BBall/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Caleb/Documents/GitHub/Basketball/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Caleb/Documents/GitHub/BBall/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

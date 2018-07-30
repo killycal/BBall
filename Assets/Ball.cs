@@ -30,6 +30,15 @@ public class Ball : MonoBehaviour {
     {
         ballLeave("pass", target);
     }
+    public void Rotate(string player, string target)
+    {
+        Transform origin = GameObject.Find(player).transform;
+        Vector3 position = GameObject.Find(target).transform.position;
+        position.y = 0.8f;
+        Vector3 relativePos = position - origin.position;
+        Quaternion rotation = Quaternion.LookRotation(relativePos);
+        origin.transform.rotation = rotation;
+    }
     public void ballLeave(string method, string teamno)
     {
         if (id != null)
@@ -45,10 +54,10 @@ public class Ball : MonoBehaviour {
             if (method == "pass")
             {
                 target = teamno;
+                Rotate(id, target);
                 setPossession(null);
                 Vector3 velocity = GameObject.Find(target).GetComponent<Rigidbody>().velocity;
                 goal = GameObject.Find(target).transform.position;
-                print(target);
                 Parabolic.solve_ballistic_arc(ballPos, player.power, goal, velocity, 9.81f, out arc1, out arc2);
                 gameObject.GetComponent<Rigidbody>().AddForce(arc1, ForceMode.VelocityChange);
 
@@ -56,10 +65,13 @@ public class Ball : MonoBehaviour {
             else if (method == "shoot")
             {
                 player = GameObject.Find(teamno).GetComponent<Player>();
+                string rim;
                 if (float.Parse(id) < 100)
-                    goal = GameObject.Find("Hole0").transform.position;
+                    rim = "Hole0";
                 else
-                    goal = GameObject.Find("Hole1").transform.position;
+                    rim="Hole1";
+                goal = GameObject.Find(rim).transform.position;
+                Rotate(id, rim);
                 setPossession(null);
                 Parabolic.solve_ballistic_arc(ballPos, player.power, goal, 9.81f, out arc1, out arc2);
                 gameObject.GetComponent<Rigidbody>().AddForce(arc2, ForceMode.VelocityChange);
@@ -73,7 +85,7 @@ public class Ball : MonoBehaviour {
             id = playerId;
             hand = GameObject.Find(id + "RH").transform;
             cam.changeCamera(id);
-            GameObject.Find("Controller").GetComponent<MovementController>().possession = id;
+            GameObject.Find("Movement").GetComponent<MovementController>().possession = id;
         }
         else
         {
