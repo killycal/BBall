@@ -5,10 +5,11 @@ using UnityEngine;
 public class MovementController : MonoBehaviour {
     public string possession;
     private GameObject player;
+    public Vector3 dirVector;
     private void FixedUpdate()
     {
         player = GameObject.Find(possession);
-        Vector3 dirVector = new Vector3(Input.GetAxis("Vertical") * -1, 0, Input.GetAxis("Horizontal")).normalized * player.GetComponent<Player>().speed;
+        dirVector = new Vector3(Input.GetAxis("Vertical") * -1, 0, Input.GetAxis("Horizontal")).normalized * player.GetComponent<Player>().speed;
         player.GetComponent<Rigidbody>().MovePosition(player.transform.position + dirVector * Time.deltaTime);
 
         if (Input.GetKeyUp("x"))
