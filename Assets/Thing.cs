@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Thing : MonoBehaviour {
 
-    private int nome;
+    public int team;
+    public string position;
     // Use this for initialization
     void Start()
     {
-        int.TryParse(gameObject.transform.name, out nome);
-        nome = nome % 10;
-        GameObject.Find(nome.ToString()).GetComponent<Player>().Move();
+        //int.TryParse(gameObject.transform.name, out nome);
+        //nome = nome % 10;
+        GameObject.Find(position+team).GetComponent<Player>().Move();
     }
     public void Adjust(float x, float y)
     {

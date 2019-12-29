@@ -12,7 +12,6 @@ public class Player : MonoBehaviour {
     private bool outOfPosition;
     private void Start()
     {
-        team = 1;
         gameObject.transform.GetChild(0).gameObject.transform.name = gameObject.transform.name+"RH";
         Move();
     }
@@ -20,7 +19,8 @@ public class Player : MonoBehaviour {
     {
         if (outOfPosition)
         {
-            dirVector = GameObject.Find(team.ToString() + gameObject.transform.name).transform.position - gameObject.transform.position;
+            print(gameObject.transform.name);
+            dirVector = dir.position - gameObject.transform.position;
             gameObject.GetComponent<Rigidbody>().MovePosition(gameObject.transform.position + dirVector * Time.deltaTime * speed/2.5f);
         }
     }

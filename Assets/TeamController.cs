@@ -48,11 +48,11 @@ public class TeamController : MonoBehaviour {
 
     private void initializeTeam()
     {
-        pg = GameObject.Find(team + "1");
-        sg = GameObject.Find(team + "2");
-        sf = GameObject.Find(team + "3");
-        pf = GameObject.Find(team + "4");
-        c = GameObject.Find(team + "5");
+        pg = GameObject.Find("PG"+team);
+        sg = GameObject.Find("SG"+team);
+        sf = GameObject.Find("SF"+team);
+        pf = GameObject.Find("PF"+team);
+        c = GameObject.Find("C"+team);
     }
 
     private void motion4out(bool high)

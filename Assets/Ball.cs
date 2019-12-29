@@ -66,7 +66,7 @@ public class Ball : MonoBehaviour {
             {
                 player = GameObject.Find(teamno).GetComponent<Player>();
                 string rim;
-                if (float.Parse(id) < 100)
+                if (id[id.Length-1]=='0')
                     rim = "Hole0";
                 else
                     rim="Hole1";
