@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
     private Vector3 ballPos;
     public Transform hand;
     public bool free;
+    public int teamPossession;
     private string id;
     private string target;
     private bool seperation;
@@ -84,6 +85,7 @@ public class Ball : MonoBehaviour {
         {
             id = playerId;
             hand = GameObject.Find(id + "RH").transform;
+            teamPossession = GameObject.Find(id).GetComponent<Player>().team;
             cam.changeCamera(id);
             GameObject.Find("Movement").GetComponent<MovementController>().possession = id;
         }

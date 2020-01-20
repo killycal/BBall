@@ -19,7 +19,6 @@ public class Player : MonoBehaviour {
     {
         if (outOfPosition)
         {
-            print(gameObject.transform.name);
             dirVector = dir.position - gameObject.transform.position;
             gameObject.GetComponent<Rigidbody>().MovePosition(gameObject.transform.position + dirVector * Time.deltaTime * speed/2.5f);
         }
